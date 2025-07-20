@@ -8,8 +8,6 @@ var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
 
-var speed_with_multiplier = speed * speed_multiplier
-
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
@@ -27,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * speed_with_multiplier
+		velocity.x = direction * speed * speed_multiplier
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed_with_multiplier)
+		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 
 	move_and_slide()
