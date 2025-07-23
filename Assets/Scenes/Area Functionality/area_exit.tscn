@@ -6,15 +6,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pwf35"]
 radius = 9.05539
 
-[node name="AreaExit" type="Area2D"]
+[node name="AreaExit" type="Area2D" node_paths=PackedStringArray("sprite") groups=["area_exits"]]
 collision_layer = 65536
 script = ExtResource("1_pwf35")
+sprite = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["area_exits"]]
 z_index = -10
 texture = ExtResource("1_1a2po")
-hframes = 2
-frame = 1
+region_enabled = true
+region_rect = Rect2(22, 0, 22, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pwf35")

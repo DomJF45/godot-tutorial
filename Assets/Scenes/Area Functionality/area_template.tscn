@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ybpmnn5f0qq0"]
+[gd_scene load_steps=7 format=3 uid="uid://ybpmnn5f0qq0"]
 
 [ext_resource type="Texture2D" uid="uid://t6sd6w55xbo1" path="res://Assets/Sprites/tiles_1.png" id="1_3uyhe"]
 [ext_resource type="PackedScene" uid="uid://dt4fqf7bs37do" path="res://Assets/Scenes/player.tscn" id="2_8wi1m"]
 [ext_resource type="PackedScene" uid="uid://bsxsn5k468sgj" path="res://Assets/Scenes/Area Functionality/area_exit.tscn" id="3_2pegy"]
+[ext_resource type="PackedScene" uid="uid://diyo6solcp4nu" path="res://Assets/Scenes/energy_cell.tscn" id="4_dp7b8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ql8qi"]
 texture = ExtResource("1_3uyhe")
@@ -328,7 +329,7 @@ terrain_set_0/terrain_1/name = "ground 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_ql8qi")
 
-[node name="AreaTemplate" type="Node2D"]
+[node name="AreaTemplate2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 16)
@@ -342,3 +343,17 @@ layer_1/tile_data = PackedInt32Array(3, 65536, 5, 65539, 65536, 5, 131075, 65536
 
 [node name="AreaExit" parent="." instance=ExtResource("3_2pegy")]
 position = Vector2(-56, -11)
+
+[node name="EnergyCells" type="Node2D" parent="."]
+
+[node name="EnergyCell1" parent="EnergyCells" instance=ExtResource("4_dp7b8")]
+position = Vector2(70, -7)
+
+[node name="EnergyCell2" parent="EnergyCells" instance=ExtResource("4_dp7b8")]
+position = Vector2(37, -7)
+
+[node name="EnergyCell3" parent="EnergyCells" instance=ExtResource("4_dp7b8")]
+position = Vector2(59, -7)
+
+[node name="EnergyCell4" parent="EnergyCells" instance=ExtResource("4_dp7b8")]
+position = Vector2(48, -7)
