@@ -342,17 +342,17 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_8wi1m"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129, 0)
-}
-point_count = 2
-
 [sub_resource type="Curve2D" id="Curve2D_7fk0h"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -143)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8wi1m"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129, 0)
 }
 point_count = 2
 
@@ -370,26 +370,30 @@ layer_1/tile_data = PackedInt32Array(262151, 65536, 5, 196615, 65536, 5, 131079,
 [node name="Player" parent="." instance=ExtResource("2_8wi1m")]
 position = Vector2(511, -31)
 
-[node name="MovingPlatformLarge" parent="." instance=ExtResource("3_8wi1m")]
+[node name="MovingPlatforms" type="Node2D" parent="."]
 position = Vector2(652.763, -11.4388)
 scale = Vector2(1.01031, 0.852519)
+
+[node name="MovingPlatformLarge" parent="MovingPlatforms" instance=ExtResource("3_8wi1m")]
 curve = SubResource("Curve2D_ql8qi")
-path_time = 5.0
+path_time = 3.0
 looping = true
 transition = 0
 
-[node name="MovingPlatformLarge3" parent="." instance=ExtResource("3_8wi1m")]
-position = Vector2(896, -272)
-scale = Vector2(1, 0.827586)
+[node name="MovingPlatformLarge3" parent="MovingPlatforms" instance=ExtResource("3_8wi1m")]
+position = Vector2(240.755, -305.637)
+scale = Vector2(0.989795, 0.970754)
 curve = SubResource("Curve2D_nlyig")
-path_time = 5.0
+path_time = 3.0
 
-[node name="MovingPlatformLarge2" parent="." instance=ExtResource("3_8wi1m")]
-position = Vector2(784, -63)
-curve = SubResource("Curve2D_8wi1m")
-path_time = 5.0
-
-[node name="MovingPlatformLarge" parent="MovingPlatformLarge2" instance=ExtResource("3_8wi1m")]
-position = Vector2(150, 77)
+[node name="MovingPlatformLarge4" parent="MovingPlatforms" instance=ExtResource("3_8wi1m")]
+position = Vector2(278.367, 29.8396)
+scale = Vector2(0.989795, 1.17299)
 curve = SubResource("Curve2D_7fk0h")
-path_time = 5.0
+path_time = 3.0
+
+[node name="MovingPlatformLarge2" parent="MovingPlatforms" instance=ExtResource("3_8wi1m")]
+position = Vector2(129.898, -60.481)
+scale = Vector2(0.989795, 1.17299)
+curve = SubResource("Curve2D_8wi1m")
+path_time = 3.0
